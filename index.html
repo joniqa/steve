@@ -1,154 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Morgan — QA Engineer</title>
-  <meta name="description" content="Manual and automation QA engineer with 1 year of experience. Portfolio showcasing bug reports, test suites, and a methodology-driven approach to quality.">
-  <meta name="theme-color" content="#0F172A">
+  <meta name="description" content="Manual and automation QA engineer with 1 year of experience. I find the bugs your users would've found first.">
+  <meta name="theme-color" content="#0B0D17">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root{--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--radius:16px;--radius-sm:10px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+    [data-theme="dark"]{--bg:#0B0D17;--bg-alt:#111628;--card:#161B2D;--card-border:#1F2640;--text:#F1F7FF;--text-secondary:#8892B8;--accent:#FF6B9D;--accent2:#45E8B6;--accent3:#FFD166;--glow:rgba(255,107,157,0.25);--glow2:rgba(69,232,182,0.2);--muted:#2A3250;--tag-bg:rgba(255,107,157,0.1);--tag-border:rgba(255,107,157,0.2);--success-bg:rgba(69,232,182,0.1);--success-border:rgba(69,232,182,0.25);--error-bg:rgba(255,107,107,0.1);--error-border:rgba(255,107,107,0.25);--toggle-bg:#1F2640;--footer-border:rgba(255,255,255,0.06)}
+    [data-theme="light"]{--bg:#F8FAFE;--bg-alt:#EEF2F8;--card:#FFFFFF;--card-border:#E2E8F0;--text:#1A1D2E;--text-secondary:#6B7BA0;--accent:#D4386D;--accent2:#0EA57D;--accent3:#C88A20;--glow:rgba(212,56,109,0.12);--glow2:rgba(14,165,125,0.1);--muted:#E2E8F0;--tag-bg:rgba(212,56,109,0.08);--tag-border:rgba(212,56,109,0.15);--success-bg:rgba(14,165,125,0.08);--success-border:rgba(14,165,125,0.15);--error-bg:rgba(220,38,38,0.08);--error-border:rgba(220,38,38,0.15);--toggle-bg:#E2E8F0;--footer-border:rgba(0,0,0,0.06)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'IBM Plex Sans',sans-serif;background:#0F172A;color:#F8FAFC;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    img{max-width:100%;height:auto;display:block}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    h1,h2,h3,h4,.mono{font-family:'JetBrains Mono',monospace}
-    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#22C55E;margin-bottom:0.75rem;display:block}
-    .section-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem}
-    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem}
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease-out,transform 0.7s ease-out}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;transition:background var(--transition),color var(--transition);overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}ul{list-style:none}
+    .container{width:100%;max-width:1120px;margin:0 auto;padding:0 1.5rem}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
     .reveal.revealed{opacity:1;transform:translateY(0)}
-    .reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
-    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 0 4rem}
-    .hero-bg{position:absolute;inset:0;background:url('hero-bg.jpg') center/cover no-repeat;opacity:0.2;z-index:0}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0F172A 0%,transparent 40%,transparent 60%,#0F172A 100%),linear-gradient(90deg,#0F172A 0%,transparent 30%,transparent 70%,#0F172A 100%)}
-    .hero-ambient{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(34,197,94,0.08) 0%,transparent 70%);animation:heroBreathe 8s ease-in-out infinite alternate;pointer-events:none}
-    @keyframes heroBreathe{0%{opacity:0.4;transform:scale(1)}100%{opacity:1;transform:scale(1.1)}}
+    .d1{transition-delay:0.05s}.d2{transition-delay:0.1s}.d3{transition-delay:0.2s}.d4{transition-delay:0.3s}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+    .theme-toggle{position:fixed;top:1.25rem;right:1.5rem;z-index:100;width:48px;height:48px;border-radius:50%;background:var(--toggle-bg);border:1px solid var(--card-border);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition),border var(--transition),transform 0.2s;font-size:1.3rem;backdrop-filter:blur(8px)}
+    .theme-toggle:hover{transform:scale(1.1)}.theme-toggle:active{transform:scale(0.95)}
+    nav{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);z-index:99;background:var(--card);border:1px solid var(--card-border);border-radius:9999px;padding:0.4rem;backdrop-filter:blur(12px);display:flex;gap:0.15rem;transition:background var(--transition),border var(--transition)}
+    nav a{padding:0.45rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:500;font-family:var(--font-display);color:var(--text-secondary);transition:all 0.2s;white-space:nowrap}
+    nav a:hover{background:var(--muted);color:var(--text)}
+    @media(max-width:600px){nav{display:none}}
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 0 3rem}
+    .hero-glow1{position:absolute;top:-20%;left:-10%;width:60%;height:80%;background:radial-gradient(ellipse,var(--glow) 0%,transparent 70%);pointer-events:none;animation:drift 12s ease-in-out infinite alternate}
+    .hero-glow2{position:absolute;bottom:-20%;right:-10%;width:50%;height:70%;background:radial-gradient(ellipse,var(--glow2) 0%,transparent 70%);pointer-events:none;animation:drift 10s ease-in-out infinite alternate-reverse}
+    @keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(5%,5%) scale(1.15)}}
     .hero-content{position:relative;z-index:1;max-width:800px}
-    .hero-name{font-family:'JetBrains Mono',monospace;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.5rem}
-    .hero-name .dot{color:#22C55E}
-    .hero-name .cursor{display:inline-block;width:3px;height:1em;background:#22C55E;margin-left:2px;animation:blink 1s step-end infinite;vertical-align:text-bottom}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);border-radius:9999px;padding:0.4rem 1rem 0.4rem 0.75rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:#22C55E;margin-bottom:1.5rem}
-    .hero-badge svg{width:14px;height:14px}
-    .hero-sub{font-size:clamp(1rem,1.5vw,1.2rem);color:#94A3B8;max-width:560px;margin-bottom:2rem;line-height:1.7}
-    .hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:#22C55E;color:#0F172A;font-family:'JetBrains Mono',monospace;font-weight:600;font-size:0.9rem;padding:0.85rem 2rem;border-radius:8px;transition:transform 0.2s ease-out,box-shadow 0.2s ease-out;border:none;cursor:pointer}
-    .hero-cta:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(34,197,94,0.35)}.hero-cta:active{transform:scale(0.97)}
-    .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(71,85,105,0.4);max-width:600px}
-    .stat-item .stat-number{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;color:#22C55E;line-height:1}
-    .stat-item .stat-label{font-size:0.82rem;color:#64748B;margin-top:0.35rem}
-    .section{padding:5rem 0}.section-alt{background:#0B1222}
-    .ticket-grid{display:grid;gap:1rem;margin-top:2rem}
-    .ticket{background:#1E293B;border:1px solid #334155;border-radius:10px;overflow:hidden;transition:box-shadow 0.3s ease-out,transform 0.3s ease-out;cursor:pointer}
-    .ticket:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.35)}
-    .ticket-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:rgba(15,23,42,0.5)}
-    .ticket-id{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:500;color:#64748B;letter-spacing:0.02em;background:#0F172A;padding:0.2rem 0.5rem;border-radius:4px;white-space:nowrap}
-    .ticket-severity{font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.55rem;border-radius:9999px;white-space:nowrap}
-    .ticket-severity.critical{background:rgba(239,68,68,0.15);color:#EF4444;border:1px solid rgba(239,68,68,0.3)}
-    .ticket-severity.major{background:rgba(249,115,22,0.15);color:#F97316;border:1px solid rgba(249,115,22,0.3)}
-    .ticket-title{font-family:'JetBrains Mono',monospace;font-size:0.9rem;font-weight:600;flex:1;margin:0}
-    .ticket-toggle{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#64748B;transition:transform 0.3s ease-out;flex-shrink:0}
-    .ticket.open .ticket-toggle{transform:rotate(180deg)}
-    .ticket-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease-out,padding 0.4s ease-out;padding:0 1.5rem}
-    .ticket.open .ticket-body{max-height:600px;padding:1.25rem 1.5rem}
-    .ticket-step{margin-bottom:1rem;font-size:0.9rem;color:#CBD5E1;line-height:1.6}.ticket-step strong{color:#F8FAFC}
-    .ticket-result{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.75rem}
-    .ticket-result-box{padding:0.75rem 1rem;border-radius:6px;font-size:0.85rem;line-height:1.5}
-    .ticket-result-box.expected{background:rgba(34,197,94,0.08);border-left:3px solid #22C55E}
-    .ticket-result-box.actual{background:rgba(239,68,68,0.08);border-left:3px solid #EF4444}
-    .ticket-result-box .label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.35rem;display:block}
-    .ticket-result-box.expected .label{color:#22C55E}.ticket-result-box.actual .label{color:#EF4444}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
-    .skill-card{background:#1E293B;border:1px solid #334155;border-radius:10px;padding:1.5rem;transition:transform 0.25s ease-out,box-shadow 0.25s ease-out}
-    .skill-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
-    .skill-card-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:rgba(34,197,94,0.1);margin-bottom:1rem}
-    .skill-card-icon svg{width:20px;height:20px;color:#22C55E}.skill-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.75rem}
-    .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
-    .skill-tag{font-family:'JetBrains Mono',monospace;font-size:0.7rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(51,65,85,0.5);color:#94A3B8;border:1px solid #334155;transition:background 0.2s,color 0.2s}
-    .skill-tag:hover{background:#334155;color:#F8FAFC}
-    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem}
-    .process-step{position:relative;padding:1.5rem;background:#1E293B;border:1px solid #334155;border-radius:10px;transition:transform 0.25s ease-out}
-    .process-step:hover{transform:translateY(-3px)}
-    .process-number{font-family:'JetBrains Mono',monospace;font-size:2.5rem;font-weight:700;color:rgba(34,197,94,0.15);position:absolute;top:0.75rem;right:1rem;line-height:1}
-    .process-step h3{font-size:0.95rem;font-weight:600;margin-bottom:0.5rem;position:relative;z-index:1}
-    .process-step p{font-size:0.85rem;color:#94A3B8;line-height:1.6;position:relative;z-index:1}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
-    .project-card{background:#1E293B;border:1px solid #334155;border-radius:10px;overflow:hidden;transition:transform 0.25s ease-out,box-shadow 0.25s ease-out}
-    .project-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-    .project-card-body{padding:1.25rem 1.5rem 1.5rem}.project-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.4rem}
-    .project-card .project-sub{font-size:0.8rem;color:#22C55E;font-family:'JetBrains Mono',monospace;margin-bottom:0.6rem;display:block}
-    .project-card p{font-size:0.85rem;color:#94A3B8;line-height:1.6}
-    .project-techs{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.75rem}
-    .project-tech{font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:4px;background:rgba(34,197,94,0.08);color:#22C55E}
-    .contact-content{max-width:500px}
-    .contact-row{display:flex;align-items:center;gap:0.75rem;padding:1rem 0;border-bottom:1px solid rgba(71,85,105,0.3);transition:color 0.2s}
-    .contact-row:hover{color:#22C55E}.contact-row svg{width:18px;height:18px;color:#22C55E;flex-shrink:0}
-    .contact-row .label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#64748B;min-width:70px}
-    .contact-row .value{font-size:0.92rem}
-    .site-footer{padding:2rem 0;border-top:1px solid rgba(71,85,105,0.3);text-align:center;font-size:0.8rem;color:#475569;font-family:'JetBrains Mono',monospace}
-    @media(max-width:768px){.hero{min-height:auto;padding:5rem 0 3rem}.stat-strip{gap:1rem}.stat-item .stat-number{font-size:1.5rem}.ticket-result{grid-template-columns:1fr}.ticket-header{flex-wrap:wrap;gap:0.5rem}.section{padding:3rem 0}}
-    @media(max-width:480px){.container{padding:0 1rem}.skills-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}}
+    .hero-emoji{font-size:3rem;margin-bottom:0.75rem;display:block}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--success-bg);border:1px solid var(--success-border);border-radius:9999px;padding:0.3rem 0.9rem 0.3rem 0.7rem;font-family:var(--font-display);font-size:0.75rem;font-weight:600;color:var(--accent2);margin-bottom:1.25rem}
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);display:inline-block;animation:pulse-dot 2s ease-in-out infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.8)}}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,5.5rem);font-weight:700;line-height:1.05;margin-bottom:0.75rem;letter-spacing:-0.03em}
+    .hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:clamp(1rem,1.4vw,1.2rem);color:var(--text-secondary);max-width:550px;margin-bottom:2rem;line-height:1.7}
+    .hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 1.6rem;border-radius:9999px;font-family:var(--font-display);font-weight:600;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.25s}
+    .btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#FF8F6B);color:#fff;box-shadow:0 4px 20px var(--glow)}
+    .btn-primary:hover{box-shadow:0 6px 30px var(--glow)}
+    .btn-outline{background:transparent;border:1px solid var(--card-border);color:var(--text)}
+    .btn-outline:hover{background:var(--card);border-color:var(--accent);color:var(--accent)}
+    .hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--card-border)}
+    .hero-stat .num{font-family:var(--font-display);font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--text),var(--text-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+    .hero-stat .lbl{font-size:0.8rem;color:var(--text-secondary);margin-top:0.2rem}
+    @media(max-width:600px){.hero-stats{gap:1.5rem}.hero-stat .num{font-size:1.5rem}}
+    .section{padding:5rem 0}.section-alt{background:var(--bg-alt)}
+    .section-label{display:inline-block;font-family:var(--font-display);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:0.5rem}
+    .section h2{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:0.75rem;letter-spacing:-0.02em}
+    .section-desc{color:var(--text-secondary);max-width:520px;font-size:1rem;line-height:1.7;margin-bottom:2.5rem}
+    .bug-grid{display:grid;gap:1rem}.bug-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all 0.3s}
+    .bug-card:hover{border-color:var(--accent);box-shadow:0 8px 30px var(--glow)}
+    .bug-header{display:flex;align-items:center;gap:0.75rem;padding:1.1rem 1.25rem;flex-wrap:wrap}
+    .bug-id{font-family:var(--font-display);font-size:0.7rem;font-weight:600;color:var(--text-secondary);background:var(--bg);padding:0.2rem 0.5rem;border-radius:6px;white-space:nowrap}
+    .bug-sev{font-family:var(--font-display);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:0.15rem 0.5rem;border-radius:9999px;white-space:nowrap}
+    .bug-sev.critical{background:var(--error-bg);color:#FF6B6B;border:1px solid var(--error-border)}
+    .bug-sev.major{background:rgba(255,209,102,0.12);color:var(--accent3);border:1px solid rgba(255,209,102,0.2)}
+    .bug-title{font-family:var(--font-display);font-weight:600;flex:1;font-size:0.9rem;min-width:120px}
+    .bug-arrow{transition:transform 0.3s;color:var(--text-secondary);font-size:1.1rem}
+    .bug-card.open .bug-arrow{transform:rotate(180deg)}
+    .bug-body{max-height:0;overflow:hidden;transition:all 0.4s ease-out;padding:0 1.25rem}
+    .bug-card.open .bug-body{max-height:500px;padding:0 1.25rem 1.25rem}
+    .bug-body p{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:0.6rem}
+    .bug-body p strong{color:var(--text)}
+    .bug-compare{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.5rem}
+    .bug-compare-box{padding:0.7rem 0.9rem;border-radius:var(--radius-sm);font-size:0.82rem;line-height:1.5}
+    .bug-compare-box h4{font-family:var(--font-display);font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem}
+    .bug-exp{background:var(--success-bg);border:1px solid var(--success-border)}
+    .bug-exp h4{color:var(--accent2)}.bug-act{background:var(--error-bg);border:1px solid var(--error-border)}
+    .bug-act h4{color:#FF6B6B}.bug-fix{margin-top:0.75rem;font-size:0.85rem;color:var(--accent2);font-family:var(--font-display);font-weight:500}
+    @media(max-width:600px){.bug-compare{grid-template-columns:1fr}}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .skill-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.5rem;transition:all 0.3s}
+    .skill-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 8px 30px var(--glow)}
+    .skill-card .emoji{font-size:2rem;margin-bottom:0.75rem;display:block}
+    .skill-card h3{font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:0.75rem}
+    .skill-pills{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .skill-pill{font-family:var(--font-display);font-size:0.68rem;font-weight:500;padding:0.2rem 0.55rem;border-radius:6px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--accent);transition:all 0.2s}
+    .skill-pill:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+    .process-step{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.5rem;position:relative;transition:all 0.3s}
+    .process-step:hover{transform:translateY(-3px);border-color:var(--accent2)}
+    .process-step .num{font-family:var(--font-display);font-size:2.5rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:absolute;top:0.75rem;right:1rem;line-height:1}
+    .process-step .emoji{font-size:1.5rem;margin-bottom:0.5rem;display:block}
+    .process-step h3{font-family:var(--font-display);font-weight:600;font-size:0.95rem;margin-bottom:0.4rem}
+    .process-step p{font-size:0.84rem;color:var(--text-secondary);line-height:1.6}
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .proj-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.5rem;transition:all 0.3s}
+    .proj-card:hover{transform:translateY(-4px);border-color:var(--accent2);box-shadow:0 8px 30px var(--glow2)}
+    .proj-card .emoji{font-size:2rem;margin-bottom:0.5rem;display:block}
+    .proj-card h3{font-family:var(--font-display);font-weight:600;font-size:0.95rem;margin-bottom:0.25rem}
+    .proj-card .tag{font-family:var(--font-display);font-size:0.7rem;font-weight:600;color:var(--accent2);display:block;margin-bottom:0.5rem}
+    .proj-card p{font-size:0.84rem;color:var(--text-secondary);line-height:1.6}
+    .proj-techs{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.75rem}
+    .proj-tech{font-family:var(--font-display);font-size:0.63rem;font-weight:500;padding:0.15rem 0.45rem;border-radius:5px;background:var(--tag-bg);color:var(--accent);border:1px solid var(--tag-border)}
+    .contact-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:2rem;max-width:500px}
+    .contact-row{display:flex;align-items:center;gap:0.75rem;padding:0.85rem 0;border-bottom:1px solid var(--card-border);transition:color 0.2s}
+    .contact-row:last-child{border-bottom:none}.contact-row:hover{color:var(--accent)}
+    .contact-row .emoji{font-size:1.2rem;width:28px;text-align:center}
+    .contact-row .lbl{font-family:var(--font-display);font-size:0.75rem;font-weight:600;color:var(--text-secondary);min-width:65px}
+    .contact-row .val{font-size:0.9rem}
+    footer{text-align:center;padding:2rem;font-size:0.8rem;color:var(--text-secondary);border-top:1px solid var(--footer-border);font-family:var(--font-display)}
+    footer .draft{color:var(--accent);font-weight:600}
+    @media(max-width:768px){.section{padding:3rem 0}.hero{padding:5rem 0 2rem}}
+    @media(max-width:480px){.container{padding:0 1rem}.skills-grid,.process-grid,.proj-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#work">Bugs</a>
+    <a href="#skills">Skills</a>
+    <a href="#process">Process</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
   <section class="hero" id="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-ambient" aria-hidden="true"></div>
+    <div class="hero-glow1" aria-hidden="true"></div>
+    <div class="hero-glow2" aria-hidden="true"></div>
     <div class="container hero-content">
-      <div class="hero-badge reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>ALL CHECKS PASSED</div>
-      <h1 class="hero-name reveal reveal-delay-1"><span style="color:#64748B;font-weight:400">~$</span> alex<span class="dot">.</span>morgan<span class="cursor" aria-hidden="true"></span></h1>
-      <p class="hero-sub reveal reveal-delay-2">Manual and automation QA engineer with 1 year of hands-on experience finding bugs that matter. I break things methodically so users don't have to.</p>
-      <a href="#work" class="hero-cta reveal reveal-delay-3">See my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></a>
-      <div class="stat-strip reveal reveal-delay-4">
-        <div class="stat-item"><div class="stat-number" data-target="120">0</div><div class="stat-label">Bugs filed</div></div>
-        <div class="stat-item"><div class="stat-number" data-target="400">0</div><div class="stat-label">Test cases</div></div>
-        <div class="stat-item"><div class="stat-number" data-target="6">0</div><div class="stat-label">Projects tested</div></div>
+      <span class="hero-emoji reveal">🐛</span>
+      <div class="hero-badge reveal"><span class="dot"></span> Open for opportunities</div>
+      <h1 class="reveal d1">I break things<br><span class="gradient">so yours don't</span> 🎯</h1>
+      <p class="hero-sub reveal d2">Manual &amp; automation QA engineer with 1 year of experience. I find the bugs your users would've found first — and I document them so well your devs will actually fix them.</p>
+      <div class="hero-actions reveal d3">
+        <a href="#work" class="btn btn-primary">See my bugs →</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <div class="hero-stat"><div class="num" data-n="120">0</div><div class="lbl">bugs filed</div></div>
+        <div class="hero-stat"><div class="num" data-n="400">0</div><div class="lbl">test cases</div></div>
+        <div class="hero-stat"><div class="num" data-n="6">0</div><div class="lbl">projects tested</div></div>
       </div>
     </div>
   </section>
   <section class="section section-alt" id="work">
     <div class="container">
-      <span class="eyebrow reveal">· Featured work</span>
-      <h2 class="section-title reveal reveal-delay-1">Bug reports that speak</h2>
-      <p class="reveal reveal-delay-2" style="color:#94A3B8;max-width:600px;margin-bottom:0.5rem">Real bugs I discovered, documented, and saw through to fix. Each report shows how I think — step by step.</p>
-      <div class="ticket-grid">
-        <div class="ticket">
-          <div class="ticket-header">
-            <span class="ticket-id">BUG-0042</span>
-            <span class="ticket-severity critical">Critical</span>
-            <h3 class="ticket-title">Cart total breaks on quantity change</h3>
-            <span class="ticket-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span>
+      <div class="reveal">
+        <span class="section-label"><span>🔍</span> Featured work</span>
+        <h2>Bug reports that<br>actually get read</h2>
+        <p class="section-desc">Real bugs I found, documented, and saw through to fix. Click to expand — each one is how I think.</p>
+      </div>
+      <div class="bug-grid">
+        <div class="bug-card reveal d1">
+          <div class="bug-header">
+            <span class="bug-id">BUG-0042</span>
+            <span class="bug-sev critical">Critical</span>
+            <span class="bug-title">Cart total breaks on quantity change</span>
+            <span class="bug-arrow">▾</span>
           </div>
-          <div class="ticket-body">
-            <div class="ticket-step"><strong>Environment:</strong> Chrome 121 · macOS Sonoma · E-Commerce App v2.3.1</div>
-            <div class="ticket-step"><strong>Steps to reproduce:</strong><br>1. Add item (SKU-8812, $49.99) to cart<br>2. Open cart → click quantity "+" twice<br>3. Observe total</div>
-            <div class="ticket-result">
-              <div class="ticket-result-box expected"><span class="label">Expected</span>Total: $149.97 (3 × $49.99)</div>
-              <div class="ticket-result-box actual"><span class="label">Actual</span>Total: $99.98 (stale session state)</div>
+          <div class="bug-body">
+            <p><strong>🧪 Environment:</strong> Chrome 121 · macOS · E-Commerce App v2.3.1</p>
+            <p><strong>📋 Steps:</strong><br>1. Add item (SKU-8812, $49.99) to cart<br>2. Open cart → tap "+" twice<br>3. Observe total</p>
+            <div class="bug-compare">
+              <div class="bug-compare-box bug-exp"><h4>✅ Expected</h4>$149.97 (3 × $49.99)</div>
+              <div class="bug-compare-box bug-act"><h4>❌ Actual</h4>$99.98 (stale session state)</div>
             </div>
-            <div class="ticket-step" style="margin-top:0.75rem"><strong>Root cause:</strong> Quantity update dispatched before session total recalculated — race condition in Redux reducer. <span style="color:#22C55E">→ Fixed in v2.3.2</span></div>
+            <div class="bug-fix">🔧 Race condition in Redux reducer — Fixed in v2.3.2</div>
           </div>
         </div>
-        <div class="ticket">
-          <div class="ticket-header">
-            <span class="ticket-id">BUG-0067</span>
-            <span class="ticket-severity major">Major</span>
-            <h3 class="ticket-title">Filter resets on mobile pagination</h3>
-            <span class="ticket-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span>
+        <div class="bug-card reveal d2">
+          <div class="bug-header">
+            <span class="bug-id">BUG-0067</span>
+            <span class="bug-sev major">Major</span>
+            <span class="bug-title">Filters reset on mobile pagination</span>
+            <span class="bug-arrow">▾</span>
           </div>
-          <div class="ticket-body">
-            <div class="ticket-step"><strong>Environment:</strong> Safari 17 · iOS 17.3 · iPhone 15</div>
-            <div class="ticket-step"><strong>Steps to reproduce:</strong><br>1. Apply filter: Category = "Electronics" + Sort = "Price low-high"<br>2. Scroll to bottom<br>3. Tap "Next page"<br>4. Observe filter chips</div>
-            <div class="ticket-result">
-              <div class="ticket-result-box expected"><span class="label">Expected</span>Filters remain applied</div>
-              <div class="ticket-result-box actual"><span class="label">Actual</span>Filters cleared to default</div>
+          <div class="bug-body">
+            <p><strong>🧪 Environment:</strong> Safari 17 · iOS 17.3 · iPhone 15</p>
+            <p><strong>📋 Steps:</strong><br>1. Apply: Electronics + Price low-high<br>2. Scroll → tap "Next page"<br>3. Observe filter chips</p>
+            <div class="bug-compare">
+              <div class="bug-compare-box bug-exp"><h4>✅ Expected</h4>Filters remain applied</div>
+              <div class="bug-compare-box bug-act"><h4>❌ Actual</h4>Filters cleared to default</div>
             </div>
-            <div class="ticket-step" style="margin-top:0.75rem"><strong>Root cause:</strong> Mobile paginator fetch didn't persist filter params from URL query string. <span style="color:#22C55E">→ Fixed in v2.3.5</span></div>
+            <div class="bug-fix">🔧 Mobile paginator dropped URL query params — Fixed in v2.3.5</div>
           </div>
         </div>
       </div>
@@ -156,67 +188,75 @@
   </section>
   <section class="section" id="skills">
     <div class="container">
-      <span class="eyebrow reveal">· Toolkit</span>
-      <h2 class="section-title reveal reveal-delay-1">What I work with</h2>
-      <p class="reveal reveal-delay-2" style="color:#94A3B8;max-width:600px;margin-bottom:0.5rem">Growing my stack every sprint. These are the tools I reach for today.</p>
+      <div class="reveal">
+        <span class="section-label"><span>🧰</span> Toolkit</span>
+        <h2>What's in my<br>QA toolbox</h2>
+        <p class="section-desc">Growing every sprint. These are the tools I reach for today.</p>
+      </div>
       <div class="skills-grid">
-        <div class="skill-card reveal reveal-delay-1"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Automation</h3><div class="skill-tags"><span class="skill-tag">Playwright</span><span class="skill-tag">Selenium</span><span class="skill-tag">Cypress</span><span class="skill-tag">Page Object Model</span></div></div>
-        <div class="skill-card reveal reveal-delay-2"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>API &amp; Data</h3><div class="skill-tags"><span class="skill-tag">Postman</span><span class="skill-tag">REST APIs</span><span class="skill-tag">SQL</span><span class="skill-tag">JSON Schema</span></div></div>
-        <div class="skill-card reveal reveal-delay-3"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Manual &amp; Exploratory</h3><div class="skill-tags"><span class="skill-tag">Boundary Value</span><span class="skill-tag">Equivalence Partitioning</span><span class="skill-tag">Bug Tracking</span><span class="skill-tag">Cross-Browser</span></div></div>
-        <div class="skill-card reveal reveal-delay-4"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Tools &amp; CI</h3><div class="skill-tags"><span class="skill-tag">Git / GitHub</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Jira</span><span class="skill-tag">Chrome DevTools</span></div></div>
+        <div class="skill-card reveal d1"><span class="emoji">🤖</span><h3>Automation</h3><div class="skill-pills"><span class="skill-pill">Playwright</span><span class="skill-pill">Selenium</span><span class="skill-pill">Cypress</span><span class="skill-pill">POM</span></div></div>
+        <div class="skill-card reveal d2"><span class="emoji">🔌</span><h3>API &amp; Data</h3><div class="skill-pills"><span class="skill-pill">Postman</span><span class="skill-pill">REST APIs</span><span class="skill-pill">SQL</span><span class="skill-pill">JSON Schema</span></div></div>
+        <div class="skill-card reveal d3"><span class="emoji">🔍</span><h3>Manual Testing</h3><div class="skill-pills"><span class="skill-pill">Boundary Value</span><span class="skill-pill">Equivalence</span><span class="skill-pill">Bug Tracking</span><span class="skill-pill">Cross-Browser</span></div></div>
+        <div class="skill-card reveal d4"><span class="emoji">⚡</span><h3>Tools &amp; CI</h3><div class="skill-pills"><span class="skill-pill">Git/GitHub</span><span class="skill-pill">GH Actions</span><span class="skill-pill">Jira</span><span class="skill-pill">DevTools</span></div></div>
       </div>
     </div>
   </section>
   <section class="section section-alt" id="process">
     <div class="container">
-      <span class="eyebrow reveal">· How I test</span>
-      <h2 class="section-title reveal reveal-delay-1">Methodology, not guesswork</h2>
-      <p class="reveal reveal-delay-2" style="color:#94A3B8;max-width:600px;margin-bottom:0.5rem">Every test I run follows a repeatable cycle — from understanding the feature to documenting the result.</p>
-      <div class="process-steps">
-        <div class="process-step reveal reveal-delay-1"><span class="process-number">01</span><h3>Understand</h3><p>Read requirements, raise edge-case questions, review acceptance criteria before writing a single test.</p></div>
-        <div class="process-step reveal reveal-delay-2"><span class="process-number">02</span><h3>Design</h3><p>Apply boundary value analysis, equivalence partitioning, and error guessing. Prioritise by risk and impact.</p></div>
-        <div class="process-step reveal reveal-delay-3"><span class="process-number">03</span><h3>Execute</h3><p>Run manual checks, automate regression paths, retest fixes. Screen record flaky behaviour as evidence.</p></div>
-        <div class="process-step reveal reveal-delay-4"><span class="process-number">04</span><h3>Report</h3><p>Write clear repro steps, classify severity, attach logs. Close the loop when the fix is verified in staging.</p></div>
+      <div class="reveal">
+        <span class="section-label"><span>🔄</span> How I test</span>
+        <h2>Methodology over<br>guesswork</h2>
+        <p class="section-desc">Repeatable cycle. Every time.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal d1"><span class="num">01</span><span class="emoji">📖</span><h3>Understand</h3><p>Read specs, find edge cases, question assumptions before writing a single test.</p></div>
+        <div class="process-step reveal d2"><span class="num">02</span><span class="emoji">📐</span><h3>Design</h3><p>Boundary value analysis, equivalence partitioning, risk-based prioritisation.</p></div>
+        <div class="process-step reveal d3"><span class="num">03</span><span class="emoji">🎯</span><h3>Execute</h3><p>Manual, automated, exploratory. Screen record flaky behaviour as evidence.</p></div>
+        <div class="process-step reveal d4"><span class="num">04</span><span class="emoji">📝</span><h3>Report</h3><p>Clear steps, severity, logs. Follow through until fix is verified in staging.</p></div>
       </div>
     </div>
   </section>
   <section class="section" id="projects">
     <div class="container">
-      <span class="eyebrow reveal">· Projects</span>
-      <h2 class="section-title reveal reveal-delay-1">Where I've tested</h2>
-      <p class="reveal reveal-delay-2" style="color:#94A3B8;max-width:600px;margin-bottom:0.5rem">Hands-on projects that shaped my approach to quality.</p>
-      <div class="projects-grid">
-        <div class="project-card reveal reveal-delay-1"><div class="project-card-body"><h3>E-Commerce Regression Suite</h3><span class="project-sub">Manual + Automated</span><p>End-to-end regression of checkout flow, cart calculations, and inventory sync. Found 23 bugs across 3 release cycles — 2 critical, 5 major.</p><div class="project-techs"><span class="project-tech">Playwright</span><span class="project-tech">TestRail</span><span class="project-tech">GitHub</span></div></div></div>
-        <div class="project-card reveal reveal-delay-2"><div class="project-card-body"><h3>API Test Collection</h3><span class="project-sub">API Testing</span><p>Postman collection for a SaaS product's REST API: 60+ test cases covering CRUD, auth, rate limiting, and error responses. Newman CI pipeline included.</p><div class="project-techs"><span class="project-tech">Postman</span><span class="project-tech">Newman</span><span class="project-tech">GitHub Actions</span></div></div></div>
-        <div class="project-card reveal reveal-delay-3"><div class="project-card-body"><h3>Mobile QA: FinTech App</h3><span class="project-sub">Mobile + Exploratory</span><p>Exploratory testing on Android and iOS. Documented 14 UX inconsistencies, 2 data-display errors, and 1 crash-on-launch reproducible on API 30+.</p><div class="project-techs"><span class="project-tech">Android Studio</span><span class="project-tech">Xcode Sim</span><span class="project-tech">Jira</span></div></div></div>
+      <div class="reveal">
+        <span class="section-label"><span>🚀</span> Projects</span>
+        <h2>Where I've<br>been testing</h2>
+        <p class="section-desc">Real projects. Real bugs found.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card reveal d1"><span class="emoji">🛒</span><h3>E-Commerce Regression Suite</h3><span class="tag">Manual + Automated</span><p>Full regression of checkout, cart, and inventory. 23 bugs across 3 releases — 2 critical, 5 major.</p><div class="proj-techs"><span class="proj-tech">Playwright</span><span class="proj-tech">TestRail</span><span class="proj-tech">GitHub</span></div></div>
+        <div class="proj-card reveal d2"><span class="emoji">🔗</span><h3>API Test Collection</h3><span class="tag">API Testing</span><p>60+ Postman tests covering CRUD, auth, rate limits, error responses. Newman CI pipeline.</p><div class="proj-techs"><span class="proj-tech">Postman</span><span class="proj-tech">Newman</span><span class="proj-tech">GH Actions</span></div></div>
+        <div class="proj-card reveal d3"><span class="emoji">📱</span><h3>Mobile QA: FinTech App</h3><span class="tag">Mobile + Exploratory</span><p>Android &amp; iOS exploratory. 14 UX issues, 2 data errors, 1 crash-on-launch on API 30+.</p><div class="proj-techs"><span class="proj-tech">Android Studio</span><span class="proj-tech">Xcode Sim</span><span class="proj-tech">Jira</span></div></div>
       </div>
     </div>
   </section>
   <section class="section section-alt" id="contact">
     <div class="container">
-      <span class="eyebrow reveal">· Let's talk</span>
-      <h2 class="section-title reveal reveal-delay-1">Break things together</h2>
-      <p class="reveal reveal-delay-2" style="color:#94A3B8;max-width:600px;margin-bottom:1.5rem">Looking for a QA engineer who cares about the details? I'm one sprint away.</p>
-      <div class="contact-content reveal reveal-delay-3">
-        <a href="mailto:alex.morgan@example.com" class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span class="label">Email</span><span class="value">alex.morgan@example.com</span></a>
-        <a href="https://github.com/alexmorgan" target="_blank" rel="noopener" class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg><span class="label">GitHub</span><span class="value">github.com/alexmorgan</span></a>
-        <a href="https://linkedin.com/in/alexmorgan-qa" target="_blank" rel="noopener" class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><span class="label">LinkedIn</span><span class="value">linkedin.com/in/alexmorgan-qa</span></a>
+      <div class="reveal">
+        <span class="section-label"><span>📬</span> Let's talk</span>
+        <h2>Got bugs?<br>I'm your person</h2>
+        <p class="section-desc">Looking for a QA engineer who actually cares? Let's chat.</p>
+      </div>
+      <div class="contact-card reveal d3">
+        <a href="mailto:alex.morgan@example.com" class="contact-row"><span class="emoji">📧</span><span class="lbl">Email</span><span class="val">alex.morgan@example.com</span></a>
+        <a href="https://github.com/alexmorgan" target="_blank" rel="noopener" class="contact-row"><span class="emoji">🐙</span><span class="lbl">GitHub</span><span class="val">github.com/alexmorgan</span></a>
+        <a href="https://linkedin.com/in/alexmorgan-qa" target="_blank" rel="noopener" class="contact-row"><span class="emoji">💼</span><span class="lbl">LinkedIn</span><span class="val">linkedin.com/in/alexmorgan-qa</span></a>
       </div>
     </div>
   </section>
-  <footer class="site-footer"><div class="container">alex.morgan · QA Engineer · DRAFT — update contact details before sharing</div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <footer><span class="draft">⚠️ DRAFT</span> — alex.morgan · QA Engineer · swap contact details before sharing</footer>
   <script>
     (function(){
       'use strict';
-      var ci=setInterval(function(){if(window.lucide){lucide.createIcons();clearInterval(ci)}},50);
-      setTimeout(function(){clearInterval(ci)},5000);
-      var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');ro.unobserve(e.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
-      document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
-      var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=parseInt(e.target.getAttribute('data-target'),10);if(!t)return;var d=1500,s=performance.now();(function a(n){var p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,3);e.target.textContent=Math.round(e*t);if(p<1)requestAnimationFrame(a);else e.target.textContent=t+'+';})();so.unobserve(e.target)}})},{threshold:0.5});
-      document.querySelectorAll('.stat-number').forEach(function(el){so.observe(el)});
-      document.querySelectorAll('.ticket-header').forEach(function(h){h.addEventListener('click',function(){h.closest('.ticket').classList.toggle('open')})});
-      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('.stat-number').forEach(function(el){el.textContent=el.getAttribute('data-target')+'+'});
+      var t=document.getElementById('themeToggle'),h=document.documentElement;
+      var s=localStorage.getItem('theme')||'dark';h.setAttribute('data-theme',s);t.textContent=s==='dark'?'🌙':'☀️';
+      t.addEventListener('click',function(){var c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);t.textContent=n==='dark'?'🌙':'☀️';document.querySelector('meta[name=\"theme-color\"]').content=n==='dark'?'#0B0D17':'#F8FAFE'});
+      var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){o.observe(el)});
+      var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=parseInt(e.target.getAttribute('data-n'),10);if(!t)return;var d=1200,s0=performance.now();(function a(n){var p=Math.min((n-s0)/d,1),e2=1-Math.pow(1-p,3);e.target.textContent=Math.round(e2*t);if(p<1)requestAnimationFrame(a);else e.target.textContent=t+'+';})();so.unobserve(e.target)}})},{threshold:0.5});
+      document.querySelectorAll('.hero-stat .num').forEach(function(el){so.observe(el)});
+      document.querySelectorAll('.bug-header').forEach(function(h2){h2.addEventListener('click',function(){h2.closest('.bug-card').classList.toggle('open')})});
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('revealed')});document.querySelectorAll('.hero-stat .num').forEach(function(el){el.textContent=el.getAttribute('data-n')+'+'})}
     })();
   </script>
 </body>
